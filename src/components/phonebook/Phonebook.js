@@ -8,6 +8,8 @@ import appear from "./appear.module.css";
 import errorFade from "./errorFade.module.css";
 import { connect } from "react-redux";
 import contactAction from "../../redux/actions/contactAction";
+import taskOperations from "../../redux/taskOperations/taskOperations";
+import contactSelector from "../../redux/contactSelector/contactSelector";
 
 class Phonebook extends Component {
   state = {
@@ -20,14 +22,7 @@ class Phonebook extends Component {
   };
 
   componentDidMount() {
-    const contactStore = JSON.parse(localStorage.getItem("contacts"));
-    contactStore.map((item) =>
-      this.props.onAddContacts(item.name, item.number)
-    );
-  }
-
-  componentDidUpdate() {
-    localStorage.setItem("contacts", JSON.stringify(this.props.contacts));
+    this.props.onGetContacts();
   }
 
   render() {
@@ -68,6 +63,8 @@ class Phonebook extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({ contacts: state.tasks.contacts });
-const mapDispatchToProps = { onAddContacts: contactAction.addContact };
+const mapStateToProps = (state) => ({
+  contacts: contactSelector.contactSelector(state),
+});
+const mapDispatchToProps = { onGetContacts: taskOperations.getContact };
 export default connect(mapStateToProps, mapDispatchToProps)(Phonebook);
