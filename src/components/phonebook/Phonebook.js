@@ -7,7 +7,6 @@ import { CSSTransition } from "react-transition-group";
 import appear from "./appear.module.css";
 import errorFade from "./errorFade.module.css";
 import { connect } from "react-redux";
-import contactAction from "../../redux/actions/contactAction";
 import taskOperations from "../../redux/taskOperations/taskOperations";
 import contactSelector from "../../redux/contactSelector/contactSelector";
 

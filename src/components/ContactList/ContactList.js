@@ -3,7 +3,6 @@ import styles from "../ContactList/ContactList.module.css";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import fadeContact from "./fadeContact.module.css";
 import { connect } from "react-redux";
-import contactAction from "../../redux/actions/contactAction";
 import taskOperations from "../../redux/taskOperations/taskOperations";
 import contactSelector from "../../redux/contactSelector/contactSelector";
 

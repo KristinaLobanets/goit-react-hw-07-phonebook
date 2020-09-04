@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styles from "./ContactForm.module.css";
 import { connect } from "react-redux";
-import contactAction from "../../redux/actions/contactAction";
 import taskOperation from "../../redux/taskOperations/taskOperations";
 import contactSelector from "../../redux/contactSelector/contactSelector";
 
